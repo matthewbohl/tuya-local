@@ -1,0 +1,75 @@
+name: Three-zone lighting transformer
+products:
+  - id: dfvxfqrwlxz8leff
+    manufacturer: EMCOD
+    model: LT3300W
+entities:
+  - entity: light
+    name: Zone 1
+    dps:
+      - id: 103
+        name: switch
+        type: boolean
+  - entity: light
+    name: Zone 2
+    dps:
+      - id: 104
+        name: switch
+        type: boolean
+  - entity: light
+    name: Zone 3
+    dps:
+      - id: 105
+        name: switch
+        type: boolean
+  - entity: sensor
+    class: power
+    dps:
+      - id: 19
+        name: sensor
+        type: integer
+        unit: W
+        class: measurement
+      - id: 26
+        name: unknown_26
+        type: integer
+        readonly: true
+  - entity: sensor
+    class: power
+    translation_key: power_x
+    translation_placeholders:
+      x: "1"
+    dps:
+      - id: 112
+        name: sensor
+        type: integer
+        unit: W
+        class: measurement
+  - entity: sensor
+    class: power
+    translation_key: power_x
+    translation_placeholders:
+      x: "2"
+    dps:
+      - id: 113
+        name: sensor
+        type: integer
+        unit: W
+        class: measurement
+  - entity: sensor
+    class: power
+    translation_key: power_x
+    translation_placeholders:
+      x: "3"
+    dps:
+      - id: 114
+        name: sensor
+        type: integer
+        unit: W
+        class: measurement
+  - entity: binary_sensor
+    name: Any zone on
+    dps:
+      - id: 110
+        name: sensor
+        type: boolean
